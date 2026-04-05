@@ -31,8 +31,10 @@ class WordAnalyzer:
             print("We don't got that text.")
 
     def print_report(self):
-        return self.process_file()
+        for word, count in sorted(self.__frequencies.items()):
+            print(f"{word}: {count}")
 
 analysis = WordAnalyzer("/home/mya_applesauce/Documents/the_prophecy_of_deltarune.txt")
-print(analysis.print_report())
+analysis.process_file()
+analysis.print_report()
 
