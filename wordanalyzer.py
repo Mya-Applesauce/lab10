@@ -34,7 +34,4 @@ class WordAnalyzer:
         for word, count in sorted(self.__frequencies.items()):
             print(f"{word}: {count}")
 
-analysis = WordAnalyzer("/home/mya_applesauce/Documents/the_prophecy_of_deltarune.txt")
-analysis.process_file()
-analysis.print_report()
 
