@@ -22,9 +22,11 @@ class WordAnalyzer:
             text = doc.translate(table)
             lower_text = text.lower()
             split_text = lower_text.split()
-            print("split text:", split_text[:10])
-            #for word in split_text:
-                
+            for word in split_text:
+                if word not in self.__frequencies:
+                    self.__frequencies[word] = 1
+                else:
+                    self.__frequencies[word] += 1
         except FileNotFoundError:
             print("We don't got that text.")
 
@@ -34,8 +36,3 @@ class WordAnalyzer:
 analysis = WordAnalyzer("/home/mya_applesauce/Documents/the_prophecy_of_deltarune.txt")
 print(analysis.print_report())
 
-#if __name__ == "__main__":
-    #analyst_list = []
-    #for fname in ["moby_dick.txt", "typee.txt", "omoo.txt", "billy_budd.txt"]:
-        #analyst = WordAnalyzer(fname)
-        #analyst_list.append(analyst)
